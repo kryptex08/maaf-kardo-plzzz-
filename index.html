@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Heartfelt Apology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffeff7 0%, #ffe4f1 100%);
+            color: #5a2d4e;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #ff7eb3, #ff65a3);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .heart-bg i {
+            position: absolute;
+            color: white;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        /* Main Content */
+        .apology-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #ff65a3;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff65a3, transparent);
+        }
+
+        .message-box {
+            background-color: #fff9fc;
+            border-left: 5px solid #ff65a3;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .highlight {
+            color: #ff65a3;
+            font-weight: bold;
+        }
+
+        /* Memories Gallery */
+        .memories-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .memory-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .memory-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .memory-caption {
+            padding: 20px;
+            background-color: #fff9fc;
+        }
+
+        .memory-caption h3 {
+            margin-bottom: 10px;
+            color: #ff65a3;
+        }
+
+        /* Regret Section */
+        .regret-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .regret-list {
+            list-style-type: none;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .regret-list li {
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background-color: #fff5f9;
+            border-radius: 10px;
+            border-left: 4px solid #ff7eb3;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .regret-list li:hover {
+            transform: translateX(10px);
+            background-color: #ffeff7;
+        }
+
+        .regret-list i {
+            color: #ff65a3;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Promise Section */
+        .promise-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .promise-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .promise-card {
+            background: linear-gradient(135deg, #ff7eb3 0%, #ff65a3 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.2);
+            transition: transform 0.4s;
+        }
+
+        .promise-card:hover {
+            transform: scale(1.05);
+        }
+
+        .promise-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .promise-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #ff7eb3, #ff65a3);
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .love-btn {
+            background-color: white;
+            color: #ff65a3;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .love-btn:hover {
+            background-color: #fff0f5;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* Animation for floating hearts */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Modal for enlarged image */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #ff65a3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .apology-section,
+            .memories-section,
+            .regret-section,
+            .promise-section,
+            footer {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            /* Music Player Styles */
+            .music-player {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 100;
+                background-color: rgba(255, 255, 255, 0.95);
+                border-radius: 50px;
+                padding: 12px 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                transition: all 0.3s;
+            }
+
+            .music-player:hover {
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                transform: translateY(-3px);
+            }
+
+            .music-btn {
+                background-color: #ff65a3;
+                color: white;
+                border: none;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 1.3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s;
+            }
+
+            .music-btn:hover {
+                background-color: #ff4d94;
+                transform: scale(1.1);
+            }
+
+            .volume-control {
+                width: 100px;
+                height: 6px;
+                background-color: #e0e0e0;
+                border-radius: 3px;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .volume-level {
+                position: absolute;
+                height: 100%;
+                width: 70%;
+                background-color: #ff65a3;
+                border-radius: 3px;
+            }
+
+            .volume-handle {
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                background-color: #ff65a3;
+                border-radius: 50%;
+                top: 50%;
+                right: 0;
+                transform: translate(50%, -50%);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .music-info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .music-title {
+                font-weight: 600;
+                color: #5a2d4e;
+                font-size: 0.9rem;
+            }
+
+            .music-status {
+                font-size: 0.8rem;
+                color: #888;
+            }
+
+            /* Mobile responsive for music player */
+            @media (max-width: 768px) {
+                .music-player {
+                    bottom: 10px;
+                    right: 10px;
+                    padding: 10px 15px;
+                }
+
+                .music-btn {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 1.2rem;
+                }
+
+                .volume-control {
+                    width: 80px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .music-player {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 60px;
+                    height: 60px;
+                    padding: 10px;
+                    overflow: hidden;
+                    transition: width 0.3s, height 0.3s;
+                }
+
+                .music-player:hover,
+                .music-player.expanded {
+                    width: 180px;
+                    height: auto;
+                    border-radius: 20px;
+                }
+
+                .music-info,
+                .volume-control {
+                    display: none;
+                }
+
+                .music-player:hover .music-info,
+                .music-player.expanded .music-info,
+                .music-player:hover .volume-control,
+                .music-player.expanded .volume-control {
+                    display: flex;
+                }
+
+                .music-player:hover .music-info,
+                .music-player.expanded .music-info {
+                    margin-top: 10px;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="heart-bg" id="heartBackground"></div>
+            <h1>My Heartfelt Apology</h1>
+            <p>Every word I said that hurt you fills me with regret. Please give me a chance to make things right.</p>
+        </header>
+
+        <!-- Music Player -->
+        <div class="music-player" id="musicPlayer">
+            <button class="music-btn" id="musicToggle">
+                <i class="fas fa-play" id="musicIcon"></i>
+            </button>
+            <div class="music-info">
+                <div class="music-title">Our Song - Love Theme</div>
+                <div class="music-status" id="musicStatus">Click to play</div>
+            </div>
+            <div class="volume-control" id="volumeControl">
+                <div class="volume-level" id="volumeLevel"></div>
+                <div class="volume-handle" id="volumeHandle"></div>
+            </div>
+            <audio id="backgroundMusic" loop>
+                <!-- Replace this with your own music file URL -->
+                <source src="perfect.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Apology Message Section -->
+        <section class="apology-section">
+            <h2 class="section-title">I'm So Sorry</h2>
+            <div class="message-box">
+                <p>My love, I can't begin to express how deeply sorry I am for the hurtful things I said. My words were
+                    careless, thoughtless, and came from a place of frustration, not truth. I never meant any of it,
+                    especially not the talk about breaking up.</p>
+
+                <p>The moment those words left my mouth, I knew I had made the biggest mistake of my life. You are the
+                    most important person to me, and the thought of losing you is unbearable. I was wrong, and I take
+                    full responsibility for my actions.</p>
+
+                <p>What we have is precious, and I regret every second that my foolish words caused you pain. You
+                    deserve nothing but love, respect, and kindness, and I promise to do better, to be better, for us.
+                </p>
+
+                <p>Please know that my love for you is stronger than any momentary frustration. You are my everything,
+                    and I will spend every day making it up to you if you'll give me the chance.</p>
+            </div>
+        </section>
+
+        <!-- Memories Section -->
+        <section class="memories-section">
+            <h2 class="section-title">Our Beautiful Memories</h2>
+            <p style="text-align: center; margin-bottom: 20px;">These moments remind me why we're meant to be together.
+            </p>
+
+            <div class="gallery">
+                <!-- Memory 1 -->
+                <div class="memory-card" onclick="openModal('memory1')">
+                    <img src="1.JPG"
+                        alt="First date memory" class="memory-img">
+                    <div class="memory-caption">
+                        <h3>Our First Date</h3>
+                        <p>I was so nervous, but you made everything feel right.</p>
+                    </div>
+                </div>
+
+                <!-- Memory 2 -->
+                <div class="memory-card" onclick="openModal('memory2')">
+                    <img src="2.JPG"
+                        alt="Bowling" class="memory-img">
+                    <div class="memory-caption">
+                        <h3>First Time bowling</h3>
+                        <p>That magical afternoon enjoying bowling.</p>
+                    </div>
+                </div>
+
+                <!-- Memory 3 -->
+                <div class="memory-card" onclick="openModal('memory3')">
+                    <img src="3 (2).JPG"
+                        alt="Celebrating your birthday" class="memory-img">
+                    <div class="memory-caption">
+                        <h3>Anniversary Dinner</h3>
+                        <p>Celebrating your first bday together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regret Section -->
+        <section class="regret-section">
+            <h2 class="section-title">What I Regret</h2>
+            <p style="text-align: center; margin-bottom: 20px;">These are the things that keep me up at night, knowing I
+                hurt you.</p>
+
+            <ul class="regret-list">
+                <li><i class="fas fa-heart-broken"></i> Raising my voice when you deserved my calmness</li>
+                <li><i class="fas fa-heart-broken"></i> Talking about breaking up instead of working through our issues
+                </li>
+                <li><i class="fas fa-heart-broken"></i> Saying things in anger that I didn't mean</li>
+                <li><i class="fas fa-heart-broken"></i> Not considering how my words would affect you</li>
+                <li><i class="fas fa-heart-broken"></i> Letting frustration cloud my judgment about what truly matters -
+                    us</li>
+                <li><i class="fas fa-heart-broken"></i> Not appreciating in that moment how lucky I am to have you</li>
+            </ul>
+        </section>
+
+        <!-- Promise Section -->
+        <section class="promise-section">
+            <h2 class="section-title">My Promises to You</h2>
+            <p style="text-align: center; margin-bottom: 20px;">I commit to doing better and being the partner you
+                deserve.</p>
+
+            <div class="promise-container">
+                <div class="promise-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Better Communication</h3>
+                    <p>I will express my feelings calmly and respectfully, without raising my voice.</p>
+                </div>
+
+                <div class="promise-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Unconditional Support</h3>
+                    <p>I will always be your biggest supporter and your safe place.</p>
+                </div>
+
+                <div class="promise-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Patience & Understanding</h3>
+                    <p>I will listen first, understand your perspective, and be patient.</p>
+                </div>
+
+                <div class="promise-card">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>Quality Time</h3>
+                    <p>I will prioritize our relationship and create more beautiful memories together.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">I Love You</h2>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 30px;">
+                You mean everything to me. Please forgive my mistakes and give our love another chance.
+            </p>
+            <button class="love-btn" id="loveButton">
+                <i class="fas fa-heart"></i> Click if you believe in second chances
+            </button>
+            <p class="footer-text">With all my love and regret,</p>
+            <p class="footer-text" style="font-weight: bold; font-size: 1.4rem;">Your Partner Who's Truly Sorry</p>
+        </footer>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" src="" alt="Enlarged memory image">
+    </div>
+
+    <script>
+        // Create floating hearts in background
+        function createFloatingHearts() {
+            const heartBg = document.getElementById('heartBackground');
+            const heartCount = 25;
+
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('i');
+                heart.className = 'fas fa-heart';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.fontSize = `${Math.random() * 20 + 15}px`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+
+                heartBg.appendChild(heart);
+            }
+        }
+
+        // Background Music Player
+        function setupMusicPlayer() {
+            const musicPlayer = document.getElementById('musicPlayer');
+            const musicToggle = document.getElementById('musicToggle');
+            const musicIcon = document.getElementById('musicIcon');
+            const musicStatus = document.getElementById('musicStatus');
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const volumeControl = document.getElementById('volumeControl');
+            const volumeLevel = document.getElementById('volumeLevel');
+            const volumeHandle = document.getElementById('volumeHandle');
+
+            // Set initial volume (70%)
+            let currentVolume = 0.7;
+            backgroundMusic.volume = currentVolume;
+            volumeLevel.style.width = `${currentVolume * 100}%`;
+            volumeHandle.style.right = `${(1 - currentVolume) * 100}%`;
+
+            // Toggle play/pause
+            musicToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+
+                if (backgroundMusic.paused) {
+                    backgroundMusic.play()
+                        .then(() => {
+                            musicIcon.className = 'fas fa-pause';
+                            musicStatus.textContent = 'Now playing';
+                            musicPlayer.classList.add('playing');
+                        })
+                        .catch(error => {
+                            console.log("Audio playback failed:", error);
+                            musicStatus.textContent = 'Click to play';
+                            alert("Please interact with the page first to enable audio.");
+                        });
+                } else {
+                    backgroundMusic.pause();
+                    musicIcon.className = 'fas fa-play';
+                    musicStatus.textContent = 'Paused';
+                    musicPlayer.classList.remove('playing');
+                }
+            });
+
+            // Volume control
+            let isDragging = false;
+
+            volumeControl.addEventListener('mousedown', startDragging);
+            volumeControl.addEventListener('touchstart', startDragging);
+
+            function startDragging(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                isDragging = true;
+                updateVolume(e);
+
+                document.addEventListener('mousemove', updateVolume);
+                document.addEventListener('touchmove', updateVolume);
+                document.addEventListener('mouseup', stopDragging);
+                document.addEventListener('touchend', stopDragging);
+            }
+
+            function updateVolume(e) {
+                if (!isDragging) return;
+
+                e.preventDefault();
+                const rect = volumeControl.getBoundingClientRect();
+                let clientX;
+
+                if (e.type.includes('touch')) {
+                    clientX = e.touches[0].clientX;
+                } else {
+                    clientX = e.clientX;
+                }
+
+                let x = clientX - rect.left;
+                x = Math.max(0, Math.min(x, rect.width));
+
+                currentVolume = x / rect.width;
+                backgroundMusic.volume = currentVolume;
+
+                volumeLevel.style.width = `${currentVolume * 100}%`;
+                volumeHandle.style.right = `${(1 - currentVolume) * 100}%`;
+            }
+
+            function stopDragging() {
+                isDragging = false;
+                document.removeEventListener('mousemove', updateVolume);
+                document.removeEventListener('touchmove', updateVolume);
+                document.removeEventListener('mouseup', stopDragging);
+                document.removeEventListener('touchend', stopDragging);
+            }
+
+            // Click anywhere on music player to expand on mobile
+            musicPlayer.addEventListener('click', function (e) {
+                if (window.innerWidth <= 480) {
+                    musicPlayer.classList.toggle('expanded');
+                }
+            });
+
+            // Auto-play music after user interaction with page (to comply with browser policies)
+            let musicAutoPlayAttempted = false;
+
+            function attemptMusicAutoPlay() {
+                if (musicAutoPlayAttempted) return;
+
+                musicAutoPlayAttempted = true;
+                backgroundMusic.play()
+                    .then(() => {
+                        musicIcon.className = 'fas fa-pause';
+                        musicStatus.textContent = 'Now playing';
+                        musicPlayer.classList.add('playing');
+                    })
+                    .catch(error => {
+                        console.log("Auto-play prevented. User needs to interact first.");
+                        musicStatus.textContent = 'Click to play';
+                    });
+            }
+
+            // Try to auto-play after a short delay when user interacts with page
+            document.addEventListener('click', function firstInteraction() {
+                setTimeout(attemptMusicAutoPlay, 500);
+                document.removeEventListener('click', firstInteraction);
+            });
+
+            // Update time for mobile responsiveness
+            function updatePlayerForMobile() {
+                if (window.innerWidth <= 480) {
+                    if (!musicPlayer.classList.contains('playing')) {
+                        musicPlayer.classList.remove('expanded');
+                    }
+                }
+            }
+
+            window.addEventListener('resize', updatePlayerForMobile);
+        }
+
+        // Call this function in your DOMContentLoaded event
+        // Add this line inside your existing DOMContentLoaded event listener:
+        // setupMusicPlayer();
+        // Open image modal
+        function openModal(memoryId) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+
+            // Set image source based on memory clicked
+            const memoryCard = document.querySelector(`[onclick="openModal('${memoryId}')"]`);
+            const imgSrc = memoryCard.querySelector('img').src;
+
+            modalImg.src = imgSrc;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close image modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Love button interaction
+        function setupLoveButton() {
+            const loveButton = document.getElementById('loveButton');
+            let clickCount = 0;
+
+            loveButton.addEventListener('click', function () {
+                clickCount++;
+
+                if (clickCount === 1) {
+                    loveButton.innerHTML = '<i class="fas fa-heart"></i> Thank you for considering it';
+                    loveButton.style.backgroundColor = '#ffeff7';
+                } else if (clickCount === 2) {
+                    loveButton.innerHTML = '<i class="fas fa-heart"></i> You mean the world to me';
+                    loveButton.style.backgroundColor = '#ffd9e8';
+                } else if (clickCount === 3) {
+                    loveButton.innerHTML = '<i class="fas fa-heart"></i> I promise to do better';
+                    loveButton.style.backgroundColor = '#ffc2dd';
+                } else if (clickCount === 4) {
+                    loveButton.innerHTML = '<i class="fas fa-heart"></i> I love you more than anything';
+                    loveButton.style.backgroundColor = '#ff65a3';
+                    loveButton.style.color = 'white';
+                    loveButton.disabled = true;
+
+                    // Show a message
+                    setTimeout(() => {
+                        alert("Thank you for giving us another chance. I will cherish you and our relationship forever.");
+                    }, 500);
+                }
+            });
+        }
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            createFloatingHearts();
+            setupLoveButton();
+
+            // Close modal when clicking outside the image
+            const modal = document.getElementById('imageModal');
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            createFloatingHearts();
+            setupLoveButton();
+
+            // Close modal when clicking outside the image
+            const modal = document.getElementById('imageModal');
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
